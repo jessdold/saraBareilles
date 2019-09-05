@@ -11,10 +11,17 @@ h1 {
     text-align: center;
 }
 
-/* 
+
 .content {
-    display: inline-block;
-} */
+    display: grid;
+    grid-template-rows: auto;
+    grid-column-gap: 1%;
+    grid-template-areas: 
+      "intro intro intro sidebar"
+      "intro intro intro sidebar"
+      "contentsBox contentsBox . sidebar"
+      "contentsBox contentsBox . .";
+}
 
 .contentsBox {
     box-sizing: border-box;
@@ -23,18 +30,18 @@ h1 {
     background-color: rgb(240, 240, 240);
     float: left;
     font-size: 13px;
-    line-height: 21px;   
+    line-height: 21px;  
+    grid-area: contentsBox; 
 }
 
 .sidebar {
     
-    float: right;
-    display: inline-block;
     padding: 8px;
     box-sizing: border-box;
     width: 250px;
     border: 1px solid grey;
     background-color: rgb(240, 240, 240);
+    grid-area: sidebar;
 }
 
 .sidebarTitle {
@@ -61,9 +68,9 @@ h1 {
 }
 
 .intro {
-    display: inline-block;
     font-size: 14px;
     clear: both;
+    grid-area: intro;
 }
 
 .contentsSection {
